@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento Projetista de Sistemas Fotovoltaicos</title>
+    <style>
+        /* Barra de rolagem tons preta */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555555;
+        }
+
+        a{
+            text-decoration: none;
+            font-family: League Spartan, sans-serif;
+        }
+
+        body {
+            background-color: #111111;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            margin: 0;
+        }
+
+        /* Layout geral responsivo */
+        .container, .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ajuste da imagem de fundo responsivo */
+        .container {
+            height: 100vh;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('2.png') no-repeat center center;
+            background-size: cover; /* Ajusta a imagem para cobrir todo o container sem distorcer */
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #FFC107;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 20px 0;
+            color: #B0B0B0;
+        }
+
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background-color: #FFC107;
+            color: #111111;
+            font-size: 1.2rem;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #E0A106;
+        }
+
+        .limited {
+            color: #FFC107;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        /* Menu de navegação */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #FFC107;
+        }
+
+        /* Responsividade: ajustes em dispositivos menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+
+            }
+
+            nav ul li {
+                margin: 10px 40px;
+            }
+        }
+
+        /* Ajuste para telas muito pequenas */
+        @media (max-width: 480px) {
+            .container, .container2 {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Conteúdo da segunda seção */
+        .container2 {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('3\ \(1\).png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .modules {
+            margin-top: 20px;
+        }
+
+        .modules ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modules li {
+            background-color: #333;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Rodapé */
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Fontes customizadas */
+        .league-spartan {
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        .montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body>
+    <!--Menu-->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#container2">Como Funciona?</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <h1 class="league-spartan">Inscrições Abertas</h1>
+            <h2 class="montserrat">Treinamento Projetista de Sistemas Fotovoltaicos</h2>
+            <h3 class="highlight montserrat">Homologação Equatorial PA</h3>
+            <p>Chegou a hora de sair da teoria e partir para a ação! Aqui, você vai botar a mão na massa de verdade.
+                Vamos juntos desenvolver um projeto real, passo a passo, direto ao ponto. Se você busca aprender de
+                forma prática e com resultados tangíveis, este treinamento é para você!</p>
+            <p class="highlight">23 à 26 de outubro - Certificação de 20h</p>
+            <span class="league-spartan"><a target="_blank" href="https://api.whatsapp.com/send/?phone=%2B5591991815174&text=Ol%C3%A1,%20Gostaria%20de%20Fazer%20um%20Or%C3%A7amento!&type=phone_number&app_absent=0" class="cta-button">Garanta já sua vaga</a></span>
+            <p class="limited montserrat">Vagas Limitadas</p>
+        </div>
+    </div>
+
+    <div class="container2" id="container2">
+        <h1 class="league-spartan">COMO FUNCIONA?</h1>
+        <div class="info montserrat">
+            <p>Nosso evento exclusivo, acontecerá em <span class="highlight">formato híbrido!</span></p>
+            <p>Durante os dias 23, 24 e 25, os encontros serão <span class="highlight">online</span>, das 19h às 23h, oferecendo flexibilidade e conveniência para todos.</p>
+            <p>Já no dia 26 (sábado), teremos um encontro <span class="highlight">presencial</span> das 8h às 17h, no <span class="highlight">Holiday Express Hotel</span>, localizado na BR 316, km 1, próximo ao Shopping Castanheira.</p>
+        </div>
+
+        <div class="modules">
+            <h2 class="league-spartan">MÓDULOS</h2>
+            <ul class="montserrat">
+                <li>Análise de fatura do cliente</li>
+                <li>Dimensionamento de sistemas</li>
+                <li>Emissão de ART/TRT</li>
+                <li>Noções de AutoCAD</li>
+                <li>Elaboração de layouts 3D</li>
+                <li>Projeto elétrico, diagramas e mapa de strings</li>
+                <li>Elaboração de formulários e memorial descritivo</li>
+                <li>Entrada na documentação</li>
+                <li>Solicitação de vistoria</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer montserrat" id="contato">
+        <p><span class="highlight">E muito mais!</span> Não perca essa oportunidade de se especializar <br> com conteúdos de alto nível, do básico ao avançado.</p>
+        <p>Durante o evento, você poderá aproveitar momentos de <span class="highlight coffee-break">networking</span> <br>em um <span class="highlight">coffee break</span> especial e ainda levar para casa um <span class="highlight">kit exclusivo</span>,<br> pensado para apoiar sua jornada de aprendizado.</p>
+        <!-- botão de inscrever-se-->
+        <a  target="_blank" href="https://api.whatsapp.com/send/?phone=%2B5591991815174&text=Ol%C3%A1,%20Gostaria%20de%20Fazer%20um%20Or%C3%A7amento!&type=phone_number&app_absent=0" class="cta-button">Inscreva-se</a>
+        <p style="margin-top: 3em;">Outubro 2024</p>
+    </div>
+</body>
+
+</html>
