@@ -1,499 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 
+    <title>
         Treinamento Projetista de Sistemas Fotovoltaicos - Homologação Equatorial PA
     </title>
-
+    <!--icone-->
+    <link rel="icon" href="bolt.svg" type="image/x-icon">
     <!-- Google Fonts: League Spartan, Montserrat @import-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <style>
-        body{
-            background-color: #000000;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /*scrollbar preta*/
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #111111;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #333333;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555555;
-        }
-
-        /*tipografias*/
-        .league-spartan {
-            font-family: 'League Spartan', sans-serif;
-            letter-spacing: -1.5px;
-        }
-
-        .montserrat {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        #body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-            background-image: url('2\ edit.png');
-            /* Imagem de fundo */
-            background-size: cover;
-            background-position: center;
-            /*aplicando máscara de sombreamento na imagem de fundo*/
-            background-blend-mode: overlay;
-            background-color: rgba(0, 0, 0, 0.7);
-            background-attachment: local;
-            background-repeat: no-repeat;
-            height: 100vh;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1024px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            height: 100vh;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-        }
-
-        .info {
-            color: #ffffff;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .title {
-            font-size: 60px;
-            /*48px em rem*/
-
-
-            font-weight: bold;
-            color: #ffce00;
-            line-height: 1;
-            text-align: right;
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #ffffff;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .highlight {
-            color: #ffce00;
-            font-weight: bold;
-        }
-
-        .description {
-            font-size: 18px;
-            color: #ffffff;
-            margin-bottom: 30px;
-            max-width: 700px;
-            width: 50%;
-            text-align: justify;
-        }
-
-        .cta {
-            display: inline-block;
-            background-color: #ffce00;
-            color: black;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .cta:hover {
-            background-color: #e0b800;
-        }
-
-        /*aplicando pseudoelemento de barra amarela lateral no id #aviso*/
-
-        #aviso::before {
-            content: '';
-            display: block;
-            width: 2px;
-            height: 100%;
-            background-color: #ffce00;
-            position: absolute;
-            left: -20px;
-        }
-
-        #aviso {
-            position: relative;
-
-            margin-left: 20px;
-        }
-
-        /* Responsividade*/
-
-        @media (max-width: 768px) {
-            /*Medidas Relativas em rem*/
-
-            .title {
-                font-size: 40px;
-            }
-
-            .subtitle {
-                font-size: 24px;
-            }
-
-            .description {
-                font-size: 18px;
-                width: 100%;
-            }
-
-            .cta {
-                padding: 8px 16px;
-            }
-
-            .info {
-                font-size: 16px;
-            }
-
-            #aviso::before {
-                width: 3px;
-            }
-
-            .infos2 {
-                font-size: 16px;
-            }
-
-
-        }
-
-        @media (max-width: 480px) {
-            .title {
-                font-size: 53px;
-            }
-
-            .subtitle {
-                font-size: 20px;
-            }
-
-            .description {
-                font-size: 14px;
-            }
-
-            .cta {
-                padding: 6px 12px;
-            }
-
-            .info {
-                font-size: 12px;
-            }
-
-            #aviso::before {
-                width: 1px;
-            }
-
-            .infos2 {
-                font-size: 12px;
-            }
-        }
-
-        #show {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-direction: column;
-            font-size: larger;
-            /*barra lateral amarela de #show*/
-
-            position: relative;
-            margin-right: 16px;
-        }
-
-        #show::before {
-            /*barra na lateral direita*/
-            content: '';
-            display: block;
-            width: 2px;
-            height: 100%;
-            background-color: #ffce00;
-            position: absolute;
-            right: -20px;
-        }
-
-        #como-funciona {
-            background-color: #111111;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            background-image: url('3\ \(1\).png');
-            background-size: cover;
-            height: 85vh;
-            background-position: center;
-            
-            /*aplicando mascara gradiente no fundo*/ 
-
-            background-blend-mode: overlay;
-            
-            background-attachment: local;
-            background-repeat: no-repeat;
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-        }
-
-
-        .title2 {
-            font-size: 2.5em;
-            color: #FFD700;
-            font-weight: bold;
-            margin-top: 60px;
-            margin-bottom: 20px;
-            /*sobrepor máscara*/
-            z-index: 1;
-
-
-
-        }
-        .section2 {
-            margin: 20px 0;
-            
-        }
-        .section2 p {
-            color: #CCCCCC;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        .highlight2 {
-            color: #FFD700;
-            font-weight: bold;
-        }
-
-        #txt{
-            /*texto centralizado e justificado com flex display*/
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: justify;
-
-            max-width: 50%;
-            margin: 0 auto;
-        }
-
-        /* responsividade em txt*/
-        @media (max-width: 768px) {
-            #txt {
-                max-width: 70%;
-
-            }
-
-            .modules-list{
-                max-width: 70%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #txt {
-                max-width: 90%;
-            }
-
-            #como-funciona {
-                height: 100vh;
-            }
-
-            .modules-list{
-                max-width: 90%;
-            }
-        }
-
-        #modulos {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            background-color: rgba(0, 0, 0, 0.8);
-            background-attachment: local;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .subtitle2 {
-            font-size: 1.7em;
-            color: #FFD700;
-            font-weight: bold;
-            margin-top: 30px;
-        }
-        .modules-list {
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-            margin: 0 auto;
-        }
-        .modules-list p {
-            background-color: rgba(77, 77, 77, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 5px 0;
-            color: #FFFFFF;
-        }
-
-        #detalhes {
-            background-color: #111111;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            background-size: cover;
-            background-image: url(4\ \(1\).png);
-            background-position: center;
-            background-blend-mode: overlay;
-            background-color: rgba(0, 0, 0, 0.8);
-            background-attachment: local;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            height: 60vh;
-        }
-
-        /*baseando no seguinte código
-        
-            img {
-            max-width: 100%;
-            display: block;
-            }
-
-            .container {
-            max-width: 400px;
-            hight: 300px;
-            margin: 1em auto;
-            position: relative;
-            border:1px solid #ccc;
-            
-            }
-
-            .container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
-            mask-image: linear-gradient(to top, transparent 5%, black 100%);
-            }
-
-            .container figcaption {
-            position: absolute;
-            bottom: 1em;
-            right: 1em;
-            font-size: 150%;
-            color: #333;
-            } 
-            */
-        
-        
-        
-        #call {
-            margin: 20px 0;
-        }
-
-        #call p {
-            color: #CCCCCC;
-            font-size: 1em;
-            line-height: 1.6;
-            max-width: 50%;
-            margin: 0 auto;
-            text-align: justify;
-        }
-        
-        #telefone{
-            font-size: 1.2em;
-            margin: 50px 0;
-            position: relative;
-            margin-left: 20px;
-        }
-
-        /*barra inferior em #telefone*/
-        #telefone::before {
-            content: '';
-            display: unset;
-            width: 120px;
-            height: 3px;
-            background-color: #ffce00;
-            position: absolute;
-            bottom: -20px;
-            right: calc(50% - 60px);
-        }
-
-        #modules{
-            max-width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            #call p {
-                max-width: 70%;
-                line-height: 1.4;
-            }
-
-            #telefone::before {
-                width: 80px;
-            }
-
-            #telefone{
-                font-size: 1em;
-            }
-
-            .subtitle2 {
-                font-size: 1.5em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #call p {
-                max-width: 90%;
-                line-height: 1.2;
-            }
-
-            #telefone::before {
-                width: 60px;
-            }
-
-            #telefone{
-                font-size: 0.8em;
-            }
-
-            .subtitle2 {
-                font-size: 2em;
-            }
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -515,7 +33,14 @@
                     forma prática e com resultados tangíveis, este treinamento é para você!
                 </div>
             </div>
-            <a target="_blank" href="https://api.whatsapp.com/send/?phone=%2B559184461639&text=Ol%C3%A1,%20gostaria%20de%20me%20inscrever%20no%20treinamento%20de%20projetos%20fotovoltaicos!&type=phone_number&app_absent=0" class="cta league-spartan">Garanta já sua vaga</a>
+            <div id="box">
+                <a href="https://api.whatsapp.com/send/?phone=%2B559184461639&text=Ol%C3%A1,%20gostaria%20de%20me%20inscrever%20no%20treinamento%20de%20projetos%20fotovoltaicos!&type=phone_number&app_absent=0"
+                    style="text-decoration: none;" target="_blank">
+                    <div id="box-in">Garanta Já Sua Vaga</div>
+                </a>
+                <span id="text" style="color:#ffce00;" class=" league-spartan">E VENHA SER UM PROJETISTA NA ÁREA QUE
+                    MAIS CRESCE NO PAÍS</span>
+            </div>
         </div>
     </div>
     <div id="como-funciona">
@@ -533,7 +58,7 @@
     </div>
     <div id="modulos">
         <div class="subtitle2 league-spartan">MÓDULOS</div>
-        <div class="modules-list montserrat" id="modules" >
+        <div class="modules-list montserrat" id="modules">
             <p>• Análise de fatura do cliente</p>
             <p>• Dimensionamento de sistemas</p>
             <p>• Emissão de ART/TRT</p>
@@ -547,13 +72,22 @@
     </div>
     <div id="detalhes">
         <div class="section2 montserrat" id="call">
-            <p>E muito mais! Não perca essa oportunidade de se especializar com conteúdos de alto nível, do <span class="highlight">básico ao avançado</span>. Durante o evento, você poderá aproveitar momentos de <span class="highlight">networking</span> em um coffee break especial e ainda levar para casa um <span class="highlight">kit exclusivo</span>, pensado para apoiar sua jornada de aprendizado.</p>
+            <p>E muito mais! Não perca essa oportunidade de se especializar com conteúdos de alto nível, do <span
+                    class="highlight">básico ao avançado</span>. Durante o evento, você poderá aproveitar momentos de
+                <span class="highlight">networking</span> em um coffee break especial e ainda levar para casa um <span
+                    class="highlight">kit exclusivo</span>, pensado para apoiar sua jornada de aprendizado.
+            </p>
         </div>
 
         <!-- Telefone pra contato-->
 
         <div class=" montserrat" id="telefone">
-            Inscrições: <a target="_blank" style="text-decoration: none; color: #ffffff;" href="https://api.whatsapp.com/send/?phone=%2B559184461639&text=Ol%C3%A1,%20gostaria%20de%20me%20inscrever%20no%20treinamento%20de%20projetos%20fotovoltaicos!&type=phone_number&app_absent=0">(91) 98446-1639</a>
+            <a target="_blank" style="text-decoration: none; color: #ffffff;"
+                href="https://api.whatsapp.com/send/?phone=%2B559184461639&text=Ol%C3%A1,%20gostaria%20de%20me%20inscrever%20no%20treinamento%20de%20projetos%20fotovoltaicos!&type=phone_number&app_absent=0">
+                <div id="btn">
+                    Inscreva-se Aqui
+                </div>
+            </a>
         </div>
     </div>
 </body>
